@@ -54,7 +54,7 @@ do
       --network=elastic \
       --name="es${node}" \
       -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
-      docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+      amazon/opendistro-for-elasticsearch:1.13.3
   elif [ "x${MAJOR_VERSION}" == 'x7' ]; then
     docker run \
       --rm \
@@ -76,7 +76,7 @@ do
       --network=elastic \
       --name="es${node}" \
       -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
-      docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+      amazon/opendistro-for-elasticsearch:1.13.3
   elif [ "x${MAJOR_VERSION}" == 'x8' ]; then
     if [ "${SECURITY_ENABLED}" == 'true' ]; then
       elasticsearch_password=${elasticsearch_password-'changeme'}
@@ -100,7 +100,7 @@ do
         --name="es${node}" \
         --detach \
         -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
-        docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+        amazon/opendistro-for-elasticsearch:1.13.3
     else
       docker run \
         --rm \
@@ -122,7 +122,7 @@ do
         --name="es${node}" \
         --detach \
         -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
-        docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+        amazon/opendistro-for-elasticsearch:1.13.3
     fi
   fi
 done
