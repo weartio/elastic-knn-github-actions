@@ -19,7 +19,7 @@ if [[ ! -z $PLUGINS ]]; then
     --network=elastic \
     -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
     --entrypoint=/usr/share/elasticsearch/bin/elasticsearch-plugin \
-    amazon/opendistro-for-elasticsearch:1.13.3 \
+    mjayyab/opendistro-for-elasticsearch-no-ssl:1.13.3 \
     install ${PLUGINS/\\n/ } --batch
 fi
 
@@ -54,7 +54,7 @@ do
       --network=elastic \
       --name="es${node}" \
       -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
-      amazon/opendistro-for-elasticsearch:1.13.3
+      mjayyab/opendistro-for-elasticsearch-no-ssl:1.13.3
   elif [ "x${MAJOR_VERSION}" == 'x7' ]; then
     docker run \
       --rm \
@@ -76,7 +76,7 @@ do
       --network=elastic \
       --name="es${node}" \
       -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
-      amazon/opendistro-for-elasticsearch:1.13.3
+      mjayyab/opendistro-for-elasticsearch-no-ssl:1.13.3
   elif [ "x${MAJOR_VERSION}" == 'x8' ]; then
     if [ "${SECURITY_ENABLED}" == 'true' ]; then
       elasticsearch_password=${elasticsearch_password-'changeme'}
@@ -100,7 +100,7 @@ do
         --name="es${node}" \
         --detach \
         -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
-        amazon/opendistro-for-elasticsearch:1.13.3
+        mjayyab/opendistro-for-elasticsearch-no-ssl:1.13.3
     else
       docker run \
         --rm \
@@ -122,7 +122,7 @@ do
         --name="es${node}" \
         --detach \
         -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
-        amazon/opendistro-for-elasticsearch:1.13.3
+        mjayyab/opendistro-for-elasticsearch-no-ssl:1.13.3
     fi
   fi
 done
