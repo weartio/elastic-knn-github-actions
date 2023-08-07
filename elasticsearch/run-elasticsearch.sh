@@ -19,7 +19,7 @@ if [[ ! -z $PLUGINS ]]; then
     --network=elastic \
     -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
     --entrypoint=/usr/share/elasticsearch/bin/elasticsearch-plugin \
-    docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION} \
+    amazon/opendistro-for-elasticsearch:1.13.3 \
     install ${PLUGINS/\\n/ } --batch
 fi
 
