@@ -73,7 +73,6 @@ do
       --detach \
       --network=elastic \
       --name="es${node}" \
-      -v /es/plugins/:/usr/share/elasticsearch/plugins/ \
       mjayyab/opendistro-for-elasticsearch-no-ssl:1.13.3
   elif [ "x${MAJOR_VERSION}" == 'x8' ]; then
     if [ "${SECURITY_ENABLED}" == 'true' ]; then
