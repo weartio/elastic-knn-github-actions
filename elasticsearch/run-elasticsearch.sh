@@ -65,8 +65,6 @@ do
       --env "cluster.routing.allocation.disk.threshold_enabled=false" \
       --env "bootstrap.memory_lock=true" \
       --env "ES_JAVA_OPTS=-Xms1g -Xmx1g" \
-      --env "xpack.security.enabled=false" \
-      --env "xpack.license.self_generated.type=basic" \
       --env "http.port=${port}" \
       --env "action.destructive_requires_name=false" \
       --ulimit nofile=65536:65536 \
